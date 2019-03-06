@@ -1,12 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div style="width:100%;background-color: blue; padding:10px">
+  <div style="width:15%; float:left">
+  <ion-img [src]="imgurl[0]" style="width: 100%"></ion-img>
+    </div>
+    <div style="float:right;width:25%"><ion-button color="light" fill="clear" size="small" (click)="loginform()" >Login</ion-button></div>
+    <div style="float:right; width:25%"><ion-button color="light" fill="clear" size="small" (click)="signupform()">SignUp</ion-button></div>
+</div>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-</ion-content>
+<div style="height: 100%;width:100%;background-color: white">
+  <router-outlet></router-outlet>
+</div>

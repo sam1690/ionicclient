@@ -1,0 +1,56 @@
+<div class="container">
+<p style="text-align: center; font-size:25px">
+  Login
+  </p>
+
+  <div class="form-group">
+  
+<form #login="ngForm">
+  <div class="form-group">
+    <ion-label>
+      Email
+    </ion-label>
+    <ion-input class="form-control" name = "emailin" placeholder="Enter email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" [(ngModel)]="userobj.email" ></ion-input>
+    
+    </div>
+      
+    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors.required" style="color:red; font-size:12px">
+          * Email is required.
+        </div>  
+        <p *ngIf="email.errors.pattern" style="color:red;font-size: 12px">Please enter a valid Email</p>
+      </div> 
+    
+   
+
+    
+    
+      <div class="form-group">
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input class="form-control" type="Password" name = "passwordin" placeholder="Enter password" [(ngModel)]="userobj.password" #password="ngModel" required pattern="((^)(^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$|^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$%^&*-]).{6,}$|^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$|^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$))+$"></ion-input>
+        
+      </div>
+
+      <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors.required" style="color:red; font-size:12px">
+          * Password is required.
+        </div>  
+        <p *ngIf="password.errors.pattern" style="color:red; font-size:12px">Please enter a valid Password</p>
+      </div> 
+      
+
+
+
+
+
+        <div>
+        <ion-button name= "signupbtn" color="primary" [disabled]= "login.invalid" (click)="showdashboard()">Login</ion-button>
+        </div>
+
+        </form>
+        </div>
+        <p>{{msg}}</p>
+</div>
+        
